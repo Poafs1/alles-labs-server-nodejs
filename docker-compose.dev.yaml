@@ -1,0 +1,12 @@
+version: '3.1'
+
+services:
+  server-nodejs:
+    container_name: alleslabs-server-nodejs
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    ports:
+      - '8000:8000'
+    env_file:
+      - .env

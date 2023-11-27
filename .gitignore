@@ -33,3 +33,25 @@ lerna-debug.log*
 !.vscode/tasks.json
 !.vscode/launch.json
 !.vscode/extensions.json
+
+# ENV
+.env
+.env.*
+!.env.example
+
+# TypeORM
+**/typeorm/*.json
+
+# Database Volumes
+data
+volumes
+
+# Image
+*.jpg
+*.jpeg
+*.png
+*.gif
+*.webp
+
+# GraphQL
+*.gql

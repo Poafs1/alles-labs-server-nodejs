@@ -1,0 +1,40 @@
+version: '3.1'
+
+services:
+  postgres-db:
+    image: postgres:14.2
+    container_name: alleslabs-postgres-db
+    restart: always
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=alleslabs-dev
+    volumes:
+      - ./data/postgres:/var/lib/postgresql/data
+      - ./volumes/postgres:/backup
+    ports:
+      - '5432:5432'
+
+  # mongo-db:
+  #   image: mongo:5.0.6
+  #   container_name: alleslabs-mongo-db
+  #   restart: always
+  #   environment:
+  #     - MONGO_INITDB_ROOT_USERNAME=root
+  #     - MONGO_INITDB_ROOT_PASSWORD=root
+  #   volumes:
+  #     - ./data/mongo:/data/db
+  #     - ./volumes/mongo:/backup
+  #   ports:
+  #     - '27017:27017'
+
+  # redis-db:
+  #   image: bitnami/redis:7.0.4
+  #   container_name: alleslabs-redis-db
+  #   restart: always
+  #   environment:
+  #     - REDIS_PASSWORD=redis
+  #   volumes:
+  #     - ./data/redis:/bitnami/redis/data
+  #   ports:
+  #     - '6379:6379'
