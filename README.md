@@ -13,17 +13,17 @@
 
 ## Task
 
-- [x] Column (workflow) included Name, and Order
-- [x] Card (task) included Name, Description, Created At, Archive (status open & closed), Order
-- [x] User can create new workflow
-- [x] User can modify workflow name
-- [x] User can delete workflow if it's empty
-- [x] User can add task to workflow with name & description
-- [x] User can modify task details
-- [x] User can modify task status
-- [x] User can reordering workflow and task
-- [x] Multiple boards
-- [] Test codes
+[x] Column (workflow) included Name, and Order
+[x] Card (task) included Name, Description, Created At, Archive (status open & closed), Order
+[x] User can create new workflow
+[x] User can modify workflow name
+[x] User can delete workflow if it's empty
+[x] User can add task to workflow with name & description
+[x] User can modify task details
+[x] User can modify task status
+[x] User can reordering workflow and task
+[x] Multiple boards
+[] Test codes
 
 ## Project Setup
 
