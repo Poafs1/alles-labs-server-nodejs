@@ -268,21 +268,15 @@ export class CoreService {
       throw new InternalServerErrorException('Task not found');
     }
 
-    if (foundTask.name !== name) {
-      foundTask.name = name;
-    }
-
-    if (foundTask.description !== description) {
-      foundTask.description = description;
-    }
-
-    if (foundTask.archived !== archived) {
-      foundTask.archived = archived;
-    }
+    foundTask.name = name;
+    foundTask.description = description;
+    foundTask.archived = archived;
 
     await this.taskEntity.save(foundTask);
 
+    // Move task
     if (sourceIndex !== destinationIndex || startListId !== endListId) {
+      // Move task in same list
       if (Number(workflowId) === endListId) {
         const foundWorkflow = await this.workflowEntity
           .createQueryBuilder('workflow')
@@ -304,6 +298,7 @@ export class CoreService {
 
         await this.taskEntity.save(foundWorkflow.tasks);
       } else {
+        // Move task to another list
         const [foundFirstWorkflow, foundSecondWorkflow] = await Promise.all([
           this.workflowEntity
             .createQueryBuilder('workflow')
